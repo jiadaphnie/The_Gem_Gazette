@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Gem Gazette</title>
+<style>
+  :root { color-scheme: light; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f1ec;
+    color: #1c1a17;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 18px 60px; }
+
+  header.mast {
+    text-align: center;
+    padding: 30px 0 20px;
+    border-bottom: 3px solid #1c1a17;
+    margin-bottom: 4px;
+  }
+  .kicker {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: #b5471f; font-weight: 700; margin-bottom: 8px;
+  }
+  h1.title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 40px; font-weight: 800; letter-spacing: -1px; line-height: 1;
+  }
+  .dateline {
+    font-size: 12px; color: #6b6459; margin-top: 10px;
+    display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;
+  }
+  .dateline span { white-space: nowrap; }
+
+  .tldr {
+    background: #1c1a17; color: #f4f1ec; border-radius: 12px;
+    padding: 18px 20px; margin: 22px 0 8px;
+  }
+  .tldr h2 { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #e8a87c; margin-bottom: 10px; }
+  .tldr ul { list-style: none; }
+  .tldr li { font-size: 14.5px; padding: 5px 0 5px 20px; position: relative; }
+  .tldr li::before { content: "\2192"; position: absolute; left: 0; color: #e8a87c; font-weight: 700; }
+
+  section { margin-top: 30px; }
+  .sec-head {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 800; color: #1c1a17; margin-bottom: 4px;
+  }
+  .sec-head .dot { width: 9px; height: 9px; border-radius: 50%; background: #b5471f; flex: none; }
+  .sec-sub { font-size: 12px; color: #8a8175; margin-bottom: 14px; padding-left: 19px; }
+
+  .story { padding: 16px 0; border-bottom: 1px solid #ddd6cb; }
+  .story:last-child { border-bottom: none; }
+  .story h3 { font-size: 17px; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+  .story h3 a { color: #1c1a17; text-decoration: none; }
+  .story h3 a:hover { color: #b5471f; }
+  .story p { font-size: 14px; color: #454038; margin-bottom: 8px; }
+  .meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tag {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 20px;
+  }
+  .tag.compet { background: #fce4dc; color: #b5471f; }
+  .tag.trend  { background: #e2ece0; color: #3f6b3a; }
+  .tag.market { background: #e6e2f0; color: #5a4b8a; }
+  .tag.event  { background: #fdf0d9; color: #a9761a; }
+  .src { font-size: 11.5px; color: #8a8175; }
+  .src a { color: #8a8175; }
+  .why {
+    font-size: 13px; background: #efe9df; border-left: 3px solid #b5471f;
+    padding: 8px 12px; border-radius: 0 6px 6px 0; margin-top: 8px; color: #3a352d;
+  }
+  .why b { color: #b5471f; }
+
+  .ops {
+    background: #b5471f; color: #fff; border-radius: 14px; padding: 22px 22px 8px; margin-top: 34px;
+  }
+  .ops h2 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+  .ops ol { list-style: none; counter-reset: op; }
+  .ops li { counter-increment: op; position: relative; padding: 0 0 16px 34px; font-size: 14.5px; }
+  .ops li::before {
+    content: counter(op); position: absolute; left: 0; top: -2px;
+    width: 24px; height: 24px; background: #fff; color: #b5471f;
+    border-radius: 50%; font-weight: 800; font-size: 13px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ops li b { color: #ffe4d6; }
+
+  footer {
+    text-align: center; font-size: 11.5px; color: #8a8175;
+    margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd6cb;
+  }
+  footer b { color: #6b6459; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div class="kicker">Hidden Gem &middot; F&amp;B Intelligence</div>
+    <h1 class="title">The Gem Gazette</h1>
+    <div class="dateline">
+      <span>Week of 24 July 2026</span><span>&middot;</span><span>Hong Kong &amp; Asia</span><span>&middot;</span><span>Issue No. 1</span>
+    </div>
+  </header>
+
+  <div class="tldr">
+    <h2>The 30-second read</h2>
+    <ul>
+      <li>Two new steak-and-wine rivals just opened in HK &mdash; one Argentine in Sai Ying Pun, one harbour-view at Harbour City.</li>
+      <li>Cantonese closures keep piling up; 2026's winners are reliable "comfort + quality + clear value" concepts &mdash; your lane.</li>
+      <li>Beef costs staying high on tight Australian supply &mdash; worth locking pricing and leaning on value cuts.</li>
+      <li>Keeta is pushing into instant retail &amp; in-store services &mdash; the delivery war isn't cooling.</li>
+      <li>Diary: Asia's 50 Best Bars (Macau, 28 Jul) and HKTDC Food Expo Pro (13&ndash;15 Aug).</li>
+    </ul>
+  </div>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span>Competitors &amp; New Openings &middot; Hong Kong</div>
+    <div class="sec-sub">Who's opening near your turf and how they're positioning</div>
+
+    <div class="story">
+      <h3><a href="https://thebeat.asia/hong-kong/delish/reviews/new-restaurants-bars-2026" target="_blank">Don Pedro brings a Buenos Aires steakhouse to Sai Ying Pun</a></h3>
+      <p>A candlelit neighbourhood parrilla &amp; wine bar sourcing from the same producers as Don Julio &mdash; 75-day 12oz ribeye, 40-day tenderloin cooked simply on the plancha.</p>
+      <div class="meta"><span class="tag compet">Direct rival</span><span class="src">Source: The Beat Asia</span></div>
+      <div class="why"><b>Why it matters:</b> A direct challenger to Picanhas' on dry-aged storytelling and casual wine-bar positioning. Worth a recon visit &mdash; note their aging claims and price points.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://www.asiafamilytraveller.com/post/the-best-new-restaurants-in-hong-kong-summer-2026" target="_blank">The Orient: modern Asian steakhouse with 180&deg; harbour views at Harbour City</a></h3>
+      <p>Premium cuts, jet-fresh seafood and live-fire cooking on the Ocean Terminal extension &mdash; a big-ticket, view-driven play in TST.</p>
+      <div class="meta"><span class="tag compet">Premium rival</span><span class="src">Source: Asia Family Traveller</span></div>
+      <div class="why"><b>Why it matters:</b> Same TST catchment as your Langham-basement Flat Iron site. It sits at the special-occasion top end &mdash; reinforce your value-for-quality edge for the everyday diner.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://www.scmp.com/lifestyle/food-drink/article/3358845/10-new-hong-kong-restaurants-and-bars-try-july-2026-wagyu-focaccia" target="_blank">Yakiniku Yama Oku Cubus turns Wagyu into theatre in Causeway Bay</a></h3>
+      <p>A cave-like counter where Fukuoka chefs grill Omi and Oita Wagyu, tongue and offal &mdash; beef as a live, sensory spectacle.</p>
+      <div class="meta"><span class="tag trend">Trend: beef-as-experience</span><span class="src">Source: SCMP</span></div>
+      <div class="why"><b>Why it matters:</b> Diners increasingly pay for the show, not just the cut. A live-fire or counter moment could differentiate Flat Iron / Picanhas'.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://www.scmp.com/lifestyle/food-drink/article/3358845/10-new-hong-kong-restaurants-and-bars-try-july-2026-wagyu-focaccia" target="_blank">Tarte by RH launches a caviar egg tart &mdash; capped at 50 a day</a></h3>
+      <p>Chef Rania Hatoum's couture-tart flagship at THE SOUTHSIDE uses daily scarcity (50 units) to drive buzz and queues.</p>
+      <div class="meta"><span class="tag trend">Tactic to steal</span><span class="src">Source: SCMP</span></div>
+      <div class="why"><b>Why it matters:</b> A cheap scarcity/drop mechanic. Steak King could run a limited weekly "50 only" premium cut or special to spike demand and capture data.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span>Industry &amp; Market &middot; Hong Kong</div>
+    <div class="sec-sub">The forces moving margins and footfall</div>
+
+    <div class="story">
+      <h3><a href="https://www.visiontimes.com/2026/04/10/hong-kongs-cantonese-restaurant-industry-is-collapsing-with-14-closures-in-the-first-four-months-of-2026.html" target="_blank">14 Cantonese restaurants closed in HK's first four months of 2026</a></h3>
+      <p>Kwun Tong hit hard; operators blame rents, ingredient costs and spending draining north to Shenzhen. Even large groups are contracting.</p>
+      <div class="meta"><span class="tag market">Market shift</span><span class="src">Source: Vision Times</span></div>
+      <div class="why"><b>Why it matters:</b> Landlord leverage is rising &mdash; a moment to renegotiate rents. Vacated office-district sites may suit a Flat Iron expansion.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://thebeat.asia/hong-kong/delish/people/f-b-insights-2026" target="_blank">2026 forecast: "comfort + quality + clear value" wins</a></h3>
+      <p>Industry voices expect diners to reward simpler, more consistent menus and smaller, hands-on operations over sprawl.</p>
+      <div class="meta"><span class="tag trend">Trend</span><span class="src">Source: The Beat Asia</span></div>
+      <div class="why"><b>Why it matters:</b> Validates the Carnivore Club "reliable value" thesis. Lean into consistency and a tighter hero menu in messaging.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://www.dimsumdaily.hk/how-keeta-upended-hong-kongs-food-delivery-duopoly-and-forced-deliveroo-to-exit/" target="_blank">Keeta eyes instant retail and in-store services in 2026</a></h3>
+      <p>After forcing Deliveroo out, Meituan-backed Keeta is investing in new models while the subsidy war with Foodpanda continues.</p>
+      <div class="meta"><span class="tag market">Delivery</span><span class="src">Source: Dim Sum Daily</span></div>
+      <div class="why"><b>Why it matters:</b> Directly feeds your Keeta/Foodpanda pricing model. Watch for new fee structures and promo-funding asks before committing discount depth.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://meatonline.com.au/wholesale-meat-pricing-trends-australia-2026/" target="_blank">Beef costs stay elevated on tight Australian supply</a></h3>
+      <p>Herd-rebuild cycle plus strong Japan/Korea export demand keep wholesale prices firm; imports add roughly US$15&ndash;25/lb landed.</p>
+      <div class="meta"><span class="tag market">Supply &amp; cost</span><span class="src">Source: Meat Online AU</span></div>
+      <div class="why"><b>Why it matters:</b> Margin pressure on your core product. Consider forward-locking key cuts and featuring value-forward cuts (flat iron, picanha) prominently.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span>Events Radar</div>
+    <div class="sec-sub">Where the trade will be over the next month</div>
+
+    <div class="story">
+      <h3><a href="https://thebeat.asia/hong-kong/the-list/events/rbhk-2025-restaurant-bar-cafe-hong-kong" target="_blank">Asia's 50 Best Bars 2026 &mdash; Macau, 28 July</a></h3>
+      <p>Wynn hosts the region's premier bar awards, with the Wing Lei Bar &amp; Friends Festival running 24&ndash;29 July.</p>
+      <div class="meta"><span class="tag event">Awards</span><span class="src">Source: The Beat Asia</span></div>
+      <div class="why"><b>Why it matters:</b> Networking and trend-spotting for the Powder Monkey bar programme &mdash; see what's landing in drinks right now.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://www.2exhibitions.com/food-and-beverage/hktdc-food-expo-pro/" target="_blank">HKTDC Food Expo Pro &mdash; HKCEC, 13&ndash;15 August</a></h3>
+      <p>Hong Kong's one-stop B2B sourcing and networking platform, with spirits awards, barista and cooking competitions alongside.</p>
+      <div class="meta"><span class="tag event">Trade show</span><span class="src">Source: World Exhibitions</span></div>
+      <div class="why"><b>Why it matters:</b> Prime for supplier sourcing (beef, wine, packaging) and B2B corporate-catering leads &mdash; aligns with your outreach push.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span>The Asia Beat</div>
+    <div class="sec-sub">Regional moves worth watching</div>
+
+    <div class="story">
+      <h3><a href="https://citynomads.com/just-opened-may-2026-new-restaurants-cafes-and-bars-in-singapore/" target="_blank">Bari Bari Steak &mdash; an HK teppan-steak concept &mdash; expands to Singapore</a></h3>
+      <p>The Japanese-style teppan steakhouse that launched in Hong Kong last year opened its first overseas outpost at Tampines 1.</p>
+      <div class="meta"><span class="tag trend">Format to watch</span><span class="src">Source: City Nomads</span></div>
+      <div class="why"><b>Why it matters:</b> Proof a HK-born steak format can travel. A useful reference if Hidden Gem ever eyes regional expansion.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://citynomads.com/just-opened-may-2026-new-restaurants-cafes-and-bars-in-singapore/" target="_blank">Tokyo's Hikiniku To Come brings hamburg-steak theatre to Singapore</a></h3>
+      <p>Charcoal-grilled hamburg patties served three-in-succession &mdash; the hamburg-steak trend keeps spreading across Asia.</p>
+      <div class="meta"><span class="tag trend">Trend: hamburg steak</span><span class="src">Source: City Nomads</span></div>
+      <div class="why"><b>Why it matters:</b> A premium-patty angle for Flat Iron Burger &mdash; a "hamburg steak" special could ride the wave.</div>
+    </div>
+
+    <div class="story">
+      <h3><a href="https://finance.yahoo.com/news/chipotle-enter-asia-2026-burrito-205403951.html" target="_blank">Chipotle enters Asia in 2026 via South Korea and Singapore</a></h3>
+      <p>The US fast-casual giant plants its flag in the region, signalling more international chain competition for the casual-dining wallet.</p>
+      <div class="meta"><span class="tag market">Competition</span><span class="src">Source: Yahoo Finance</span></div>
+      <div class="why"><b>Why it matters:</b> International fast-casual is circling Asia. Reinforces the value of a strong local loyalty moat like Carnivore Club.</div>
+    </div>
+  </section>
+
+  <div class="ops">
+    <h2>&#9889; Opportunities for us this week</h2>
+    <ol>
+      <li>Book a <b>recon visit to Don Pedro</b> &mdash; log their aging claims, cuts, price points and wine-bar feel vs. Picanhas'.</li>
+      <li>Pilot a <b>"50 only" weekly drop</b> on Steak King (&agrave; la Tarte by RH) to spike demand and capture loyalty sign-ups.</li>
+      <li>With closures rising, <b>test rent renegotiation</b> and scout vacated office-district sites for Flat Iron.</li>
+      <li><b>Forward-lock key beef cuts</b> and reweight menus toward value cuts before costs climb further.</li>
+      <li>Line up <b>Food Expo Pro (13&ndash;15 Aug)</b> for supplier sourcing and corporate-catering leads.</li>
+    </ol>
+  </div>
+
+  <footer>
+    <b>The Gem Gazette</b> &mdash; assembled automatically for Hidden Gem Restaurants.<br>
+    Hong Kong-first F&amp;B intelligence &middot; Refreshes weekly, Monday mornings.<br>
+    Tap any headline to read the full source.
+  </footer>
+
+</div>
+</body>
+</html>
